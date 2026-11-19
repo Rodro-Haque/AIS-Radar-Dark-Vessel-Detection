@@ -6,6 +6,12 @@ This project implements a contrastive learning approach to match AIS (Automatic 
 
 ---
 
+## Architecture
+
+![AIS-Radar Contrastive Architecture](figures/architecture.png)
+
+---
+
 ## Project Structure
 
 ```
@@ -19,6 +25,9 @@ AIS-Radar-Dark-Vessel-Detection/
 │   ├── preprocess.py         # Data cleaning and preprocessing utilities
 │   ├── compare_multi.py      # Compare results across configurations
 │   └── debug_pairs.py        # Inspect generated training pairs
+├── figures/
+│   ├── architecture.png      # Dual-encoder Euclidean contrastive architecture
+│   └── results_comparison.png# Similarity spread & threshold comparison plots
 ├── data/                     # Local dataset directory (gitignored; place private AIS/Radar CSVs here)
 ├── outputs_euclidean/        # Trained model weights (ais_radar_contrastive.pth) & scaler.pkl
 ├── analyze_dark.py           # Dark vessel analysis script
@@ -118,6 +127,10 @@ python src/compare_multi.py
 ---
 
 ## Results
+
+![Similarity Spread and Dark Vessel Detection Results](figures/results_comparison.png)
+
+![AIS and Radar Data Density Analysis](data_density_analysis.png)
 
 ### Threshold 0.10 vs 0.50 (Euclidean + Hard Negative Mining)
 
